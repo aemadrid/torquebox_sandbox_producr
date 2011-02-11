@@ -1,5 +1,6 @@
 source :rubygems
 
+gem 'rack'
 gem 'sinatra'
 gem 'awesome_print'
 
