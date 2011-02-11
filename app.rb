@@ -18,6 +18,8 @@ class Perf
       '%.2f rps / %i rs / %.2f secs' % [@avg, @cnt, @time]
     end
   end
+end
+  
 get '/' do
   "Hello Producr TorqueBox!"
 end
