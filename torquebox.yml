@@ -1,0 +1,6 @@
+--- 
+application: 
+  RACK_ROOT: /home/aemadrid/apps/producr
+  RACK_ENV: development
+web: 
+  context: /producr
