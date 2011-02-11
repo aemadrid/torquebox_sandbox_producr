@@ -4,8 +4,8 @@ require 'ap'
 ROOT      = Dir.pwd
 APP_NAME  = ENV["APP"] || ROOT.split("/").last
 CONF_PATH = "torquebox.yml"
-YAML_PATH = "#{APP_NAME}-rack.yml"
-DEPL_PATH = "#{ENV["JBOSS_HOME"]}/server/#{ENV["JBOSS_CONF"] || "node1"}/deploy"
+YAML_PATH = "#{APP_NAME}-knob.yml"
+DEPL_PATH = "#{ENV["JBOSS_HOME"]}/server/#{ENV["JBOSS_CONF"] || "node1"}/farm/#{YAML_PATH}"
 
 def lnr(msg = nil, chr = "=", qty = 120)
   puts msg ? "[ #{msg} ]".center(qty, chr) : chr * qty
@@ -49,3 +49,5 @@ task :u do
   cmd %{rm #{DEPL_PATH}}
   lnr "Finished."
 end
+    
+  
