@@ -12,5 +12,9 @@ get '/upcase/:term' do
   puts "Producr :: Getting upcased term [#{params[:term]}]"
   result = queue.publish_and_receive params[:term], :timeout => 1000
   puts "Producr :: Got upcased term [#{result}] #{result.inspect} (#{result.class.name})"
-  result
+  if result.nil?
+    "[term:#{params[:term]}|upcased:nil]"
+  else
+    "[term:#{params[:term]}|upcased:#{result}]"
+  end
 end
